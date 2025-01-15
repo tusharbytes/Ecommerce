@@ -10,10 +10,8 @@ const GetCarts = createAsyncThunk("GetCarts", async (_, thunkAPI) => {
                 "Content-type": "application/json"
             }
         });
-        console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error(error);
         return thunkAPI.rejectWithValue(error.response?.data || "An error occurred");
     }
 });

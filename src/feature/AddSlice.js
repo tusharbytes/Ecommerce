@@ -7,10 +7,11 @@ const addSlice = createSlice({
     },
     reducers: {
         addToProduct: (state, action) => {
-            // console.log(action.payload, "action")
-            state.selectItem.push(action.payload) 
-
-        }
+            const newItems = action.payload.cartProducts.filter(
+              (item) => !state.selectItem.some((existingItem) => existingItem.id === item.id)
+            );
+            state.selectItem = [...state.selectItem, ...newItems];
+          },
     }
 })
 export const { addToProduct } = addSlice.actions
