@@ -9,7 +9,11 @@ const movieSelected = createSlice({
     },
     reducers: {
         selectMovie: (state, action) => {
-            state.movieCart.push(action.payload)
+            const update = action.payload.item.filter((select) =>
+                !state.movieCart?.some((exitItem) => exitItem.id === select.id)
+            )
+console.log(update,":updatefsdf")
+            state.movieCart = [...state.movieCart, ...update]
 
         }
     }

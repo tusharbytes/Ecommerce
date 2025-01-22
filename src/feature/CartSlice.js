@@ -24,7 +24,7 @@ const cartSlice = createSlice({
         error: null
     },
     reducers: {
-  
+
     },
     extraReducers: (builder) => {
         builder
@@ -47,6 +47,6 @@ const cartSlice = createSlice({
 });
 
 export { GetCarts };
- 
+
 
 export default cartSlice.reducer;
